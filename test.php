@@ -4,4 +4,5 @@
     $bear = false;
     $panda = true;
     $koala  = $bear && $panda;
+    $koala  = $bear AND $panda;
 ?>
