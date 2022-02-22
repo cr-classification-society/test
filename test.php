@@ -7,4 +7,5 @@
     $koala = $panda AND $bear;
     $koala = $panda AND $bear
     $koala = $panda AND $bear
+    $koala = $panda AND $bear
 ?>
