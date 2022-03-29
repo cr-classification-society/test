@@ -9,5 +9,5 @@ if ($i == 2){
 echo match ($i) {
     1 => '111111',
     2 => '22222',
-    default => 'aaa'
+    default => 'aaaa'
 };
