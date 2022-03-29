@@ -1,6 +1,1 @@
-{
-"phpcs":"true",
-"phpcs-severity":1,
-"review-comments-include-severity": "true",
-"phpcs-runtime-set":"testVersion:8.0-"
-}
+{"phpcs":"true","phpcs-severity":1,"review-comments-include-severity":"true","phpcs-runtime-set":"testVersion:8.0-"}
