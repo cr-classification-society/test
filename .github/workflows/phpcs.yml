@@ -1,18 +1,34 @@
-on: pull_request
+name: Lint
 
-name: Inspections
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  runPHPCSInspection:
-    name: Run PHPCS inspection
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}
-    - name: Run PHPCS inspection
-      uses: crmis-git/action-phpcs-code-review@v2.1.0_cr
-           
-      env:
-        GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
-        SKIP_FOLDERS: ".github"
-        PHP_LINT: false
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.0"
+          coverage: none
+          tools: phpcs
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          php_codesniffer: true
+          # Optional: Ignore warnings
+          php_codesniffer_args: "-S"
