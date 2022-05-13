@@ -2,7 +2,7 @@
 
 $i = 2;
 
-if ($i == 2) {
+if ($i == 2){
     echo "terw";
 }
 
@@ -12,7 +12,7 @@ echo match ($i) {
     default => 'aaaaa'
 };
 
-while ($i > 2) {
+while ($i>2) {
     echo 123;
     if (true) {
          echo 333;
