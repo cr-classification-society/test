@@ -14,6 +14,9 @@ echo match ($i) {
 
 while ($i > 2) {
     echo 123;
+     if (true) {
+         echo 333;
+     }
 }
 
      echo 222;
