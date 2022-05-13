@@ -10,26 +10,17 @@
     <rule ref="PSR12"/>
 
     <!-- Don't check Smarty because it's third-party lib -->
-    <exclude-pattern>inc/vendor/*</exclude-pattern>
+    <exclude-pattern>vendor/*</exclude-pattern>
+    <exclude-pattern>node_modules/*</exclude-pattern>
     <exclude-pattern>inc/phpdocx/*</exclude-pattern>
-    <exclude-pattern>inc/jpgraph-4.3.1/*</exclude-pattern>
 
-    <!-- There MUST NOT be a hard limit on line length.
-    The soft limit on line length MUST be 120 characters.
-    Lines SHOULD NOT be longer than 80 characters; lines longer than that SHOULD be split into multiple subsequent lines of no more than 80 characters each. -->
-    <rule ref="Generic.Files.LineLength">
-        <properties>
-            <property name="lineLimit" value="120"/>
-        </properties>
-    </rule>
-    
     <rule ref="PSR2">
         <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
     </rule>
 
     <rule ref="Generic.PHP.DeprecatedFunctions"/>
-    
+
     <!-- The `&&` and `||` operators SHOULD be used instead of `and` and `or`. -->
     <rule ref="Squiz.Operators.ValidLogicalOperators"/>
 
@@ -45,6 +36,15 @@
 
     <!-- There MUST be one whitespace after a type casting operator. -->
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
+
+    <!-- There MUST NOT be a hard limit on line length.
+    The soft limit on line length MUST be 200 characters.
+    Lines SHOULD NOT be longer than 80 characters; lines longer than that SHOULD be split into multiple subsequent lines of no more than 80 characters each. -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="200"/>
+        </properties>
+    </rule>
 
 
 <!--
