@@ -1,7 +1,7 @@
 name: Lint
 
 on: pull_request
-  
+
 jobs:
   run-linters:
     name: Run linters
@@ -14,15 +14,15 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.0"
+          php-version: "8.1"
           coverage: none
           tools: phpcs
 
       - name: Run linters
-        uses: wearerequired/lint-action@v1
+        uses: wearerequired/lint-action@v2
         with:
           php_codesniffer: true
           # Optional: Ignore warnings
-          php_codesniffer_args: "-s --standard=./phpcs.xml"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+          php_codesniffer_args: "-s --standard=phpcs.xml"
+          
+          
