@@ -11,19 +11,3 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
         run: cat $GITHUB_EVENT_PATH
-
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "8.1"
-          coverage: none
-          tools: phpcs
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          php_codesniffer: true
-          # Optional: Ignore warnings
-          php_codesniffer_args: "-p --ignore-annotations --standard=phpcs.xml"
-          
-          
