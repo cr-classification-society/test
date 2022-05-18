@@ -16,4 +16,4 @@ while ($i>2) {
     echo 123;
 }
 
-  echo 22234;
+  echo 1;
