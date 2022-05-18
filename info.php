@@ -1,3 +1,3 @@
 <?php
-phpinfofqq();
+phpinfofqq(3);
 ?>
