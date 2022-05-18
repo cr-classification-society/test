@@ -11,5 +11,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check out Git repository
         run: |
-         #cat $GITHUB_EVENT_PATH
+         cat $GITHUB_EVENT_PATH
          git diff
