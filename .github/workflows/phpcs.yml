@@ -23,6 +23,6 @@ jobs:
         with:
           php_codesniffer: true
           # Optional: Ignore warnings
-          php_codesniffer_args: "-p --standard=phpcs.xml"
+          php_codesniffer_args: "-p --ignore-annotations --standard=phpcs.xml"
           
           
