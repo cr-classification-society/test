@@ -20,7 +20,9 @@ jobs:
       - name: Check diff
         uses: technote-space/get-diff-action@v6
         with:
-          PATTERNS: /**/*.php
+          PATTERNS: |
+            **/*.php
+            *.php
           CHECK_ONLY_COMMIT_WHEN_DRAFT: true
         
       - name: Check
