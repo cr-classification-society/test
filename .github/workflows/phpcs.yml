@@ -18,11 +18,11 @@ jobs:
           tools: phpcs, cs2pr
           
       - name: Check diff
-        uses: technote-space/get-diff-action@v6
+      - uses: technote-space/get-diff-action@v6
         with:
-          PATTERNS: |
-            *.php
           CHECK_ONLY_COMMIT_WHEN_DRAFT: true
+          FORMAT: json
+      - run: echo ${{ env.GIT_DIFF }} | jq .
         
       - name: Check
         run: |
