@@ -22,7 +22,7 @@ jobs:
         with:
           CHECK_ONLY_COMMIT_WHEN_DRAFT: true
           FORMAT: json
-      - run: echo ${{ env.GIT_DIFF }} | jq .
+      - run: echo '${{ env.GIT_DIFF }}' | jq .
         
       - name: Check
         run: |
