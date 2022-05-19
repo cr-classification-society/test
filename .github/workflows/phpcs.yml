@@ -21,7 +21,6 @@ jobs:
         uses: technote-space/get-diff-action@v6
         with:
           PATTERNS: |
-            **/*.php
             *.php
           CHECK_ONLY_COMMIT_WHEN_DRAFT: true
         
