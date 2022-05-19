@@ -17,6 +17,11 @@ jobs:
           php-version: '8.1'
           tools: phpcs, cs2pr
           
+      - name: Check diff
+        uses: technote-space/get-diff-action@v6
+        with:
+          CHECK_ONLY_COMMIT_WHEN_DRAFT: true
+        
       - name: Check
         run: |
            php --version
