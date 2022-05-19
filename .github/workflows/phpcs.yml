@@ -22,7 +22,11 @@ jobs:
         with:
           CHECK_ONLY_COMMIT_WHEN_DRAFT: true
           FORMAT: json
-      - run: echo '${{ env.GIT_DIFF }}' | jq .
+      - run: |
+         curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+         scope=`echo '${{ env.GIT_DIFF }}' | jq -r .[]`
+         phpcs $a --standard=phpcs.xml
+         
         
       - name: Check
         run: |
