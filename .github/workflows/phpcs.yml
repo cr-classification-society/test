@@ -26,7 +26,7 @@ jobs:
          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
          scope=`echo '${{ env.GIT_DIFF }}' | jq -r .[]`
          phpcs $scope --standard=phpcs.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 -q --report-full --report-checkstyle=phpcs-report.xml
-         phpcs $scope --standard=phpcs.xml --report=json > load
+         phpcs $scope --standard=phpcs.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 --report=json > load
          errors=`cat load | jq .totals.errors`
          warnings=`cat load | jq .totals.warnings`
          echo "| Level | Count |" > comment.md
