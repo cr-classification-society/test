@@ -40,7 +40,7 @@ jobs:
       - name: Comment
         uses: NejcZdovc/comment-pr@v1
         with:
-         file: "comment.md"
+         file: "/home/runner/work/test/test/comment.md"
         env:
            GITHUB_TOKEN: ${{secrets.GH_BOT_TOKEN}}
 
