@@ -28,11 +28,12 @@ jobs:
          phpcs $scope --standard=phpcs.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 -q --report-full --report-checkstyle=phpcs-report.xml
 #         phpcs $scope --standard=phpcs.xml --runtime-set ignore_errors_on_exit 3 --runtime-set ignore_warnings_on_exit 3 --report-full --report-checkstyle=phpcs-report.xml
 
-      - name: PHPCS results in PR
-        run: cs2pr ./phpcs-report.xml
-
       - name: Comment
         uses: github-actions-up-and-running/pr-comment@v1.0.0
         with:
          repo-token: ${{ secrets.GH_BOT_TOKEN }}
          message: Nice PR!👍
+
+      - name: PHPCS results in PR
+        run: cs2pr ./phpcs-report.xml
+
