@@ -35,12 +35,13 @@ jobs:
          echo "| WARNING | $warnings |" >> comment.md
          cat comment.md
          pwd && ls -l comment.md
+         cp comment.md .github/workflows/
 #         phpcs $scope --standard=phpcs.xml --runtime-set ignore_errors_on_exit 3 --runtime-set ignore_warnings_on_exit 3 --report-full --report-checkstyle=phpcs-report.xml
 
       - name: Comment
         uses: NejcZdovc/comment-pr@v1
         with:
-         file: "/home/runner/work/test/test/comment.md"
+         file: "comment.md"
         env:
            GITHUB_TOKEN: ${{secrets.GH_BOT_TOKEN}}
 
