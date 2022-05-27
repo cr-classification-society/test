@@ -24,7 +24,7 @@ jobs:
           FORMAT: json
       - run: |
          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
-         echo echo '${{ env.GIT_DIFF }}'
+         echo '${{ env.GIT_DIFF }}'
          scope=`echo '${{ env.GIT_DIFF }}' | jq -r .[]`
          phpcs $scope --standard=phpcs.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 -q --report-full --report-checkstyle=phpcs-report.xml
          phpcs $scope --standard=phpcs.xml --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 --report=json > load
